@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb8c8a5-0a51-4c67-a3ba-8fc5cbcfed23" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/todoable/lib/todoable.rb" afterPath="$PROJECT_DIR$/todoable/lib/todoable.rb" />
-      <change beforePath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" afterPath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="todoable.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="226">
+              <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -187,12 +185,12 @@
       <updated>1548603580049</updated>
       <workItem from="1548603581321" duration="947000" />
       <workItem from="1548605640153" duration="1112000" />
-      <workItem from="1548610038003" duration="5332000" />
+      <workItem from="1548610038003" duration="5654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7412000" />
+    <option name="totallyTimeSpent" value="7734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -372,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="226">
+          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
           <folding />
         </state>
       </provider>

@@ -56,6 +56,24 @@ module Todoable
     puts response
   end
 
+  def self.patch_list(list_id: 1, name: "default2")
+    post_params = {
+      list: {
+        name: name
+      }
+    }.to_json
+
+    list_id = "0a2cd926-d4b2-4f0d-a4c9-98242f8b262f"
+
+    response = Todoable::Client.new(:put,
+                                    "/lists/#{list_id}",
+                                    "",
+                                    post_params
+    ).execute
+    puts response
+  end
+
+
   class Client
     class NoResponseError < StandardError; end
 
