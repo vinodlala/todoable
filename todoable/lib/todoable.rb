@@ -98,10 +98,10 @@ module Todoable
     puts response
   end
 
-  def self.post_list_items(list_id: 1, name:)
+  def self.post_list_items(list_id:, name:)
     puts "post_list_items start"
 
-    name = "feed the cat"
+    # name = "feed the cat"
 
     post_params = {
       item: {
@@ -122,6 +122,35 @@ module Todoable
                                     "/lists/#{list_id}/items",
                                     "",
                                     post_params
+    ).execute
+    puts response
+  end
+
+  def self.finish_list_item(list_id:, item_id:)
+    puts "finish_list_item start"
+    response = Todoable::Client.new(:put,
+                                    "/lists/#{list_id}/items/#{item_id}/finish"
+    ).execute
+    puts response
+
+  end
+
+  def self.delete_list_item(list_id:, item_id:)
+    puts "delete_list_item start"
+    # post_params = {
+    #   list: {
+    #     name: name
+    #   }
+    # }.to_json
+
+    # list_id = "0a2cd926-d4b2-4f0d-a4c9-98242f8b262f"
+
+    puts "delete_list_item list_id"
+    puts list_id
+    # puts "patch_list post_params"
+    # puts post_params
+    response = Todoable::Client.new(:delete,
+                                    "/lists/#{list_id}/items/#{item_id}"
     ).execute
     puts response
   end
