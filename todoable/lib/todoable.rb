@@ -30,8 +30,23 @@ module Todoable
     response
   end
 
-  def self.get_list
+  def self.get_lists
     response = Todoable::Client.new(:get, "/lists").execute
+    puts response
+  end
+
+  def self.post_list(name: "default")
+    post_params = {
+      list: {
+        name: name
+      }
+    }.to_json
+
+    response = Todoable::Client.new(:post,
+                                    "/lists",
+                                    "",
+                                    post_params
+    ).execute
     puts response
   end
 
@@ -50,6 +65,8 @@ module Todoable
 
     def execute
       puts "start execute"
+      puts "request_args"
+      puts request_args
       @response = RestClient::Request.execute(request_args)
       puts "after RestClient::Request.execute"
       puts "@response"
