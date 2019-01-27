@@ -28,8 +28,8 @@
       <file leaf-file-name="todoable.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="339">
+              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -187,12 +187,12 @@
       <updated>1548603580049</updated>
       <workItem from="1548603581321" duration="947000" />
       <workItem from="1548605640153" duration="1112000" />
-      <workItem from="1548610038003" duration="5138000" />
+      <workItem from="1548610038003" duration="5332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7218000" />
+    <option name="totallyTimeSpent" value="7412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -372,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="339">
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding />
         </state>
       </provider>

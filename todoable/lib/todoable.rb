@@ -50,6 +50,12 @@ module Todoable
     puts response
   end
 
+  def self.get_list(list_id: 1)
+    list_id = "0a2cd926-d4b2-4f0d-a4c9-98242f8b262f"
+    response = Todoable::Client.new(:get, "/lists/#{list_id}").execute
+    puts response
+  end
+
   class Client
     class NoResponseError < StandardError; end
 
