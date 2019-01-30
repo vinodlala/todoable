@@ -31,12 +31,14 @@ module Todoable
     response
   end
 
-  def self.post_list(name: "default")
+  def self.post_list(name: "OLD")
     post_params = {
       list: {
         name: name
       }
     }.to_json
+
+    # binding.pry
 
     response = Todoable::Client.new(:post,
                                     "/lists",
@@ -192,6 +194,142 @@ module Todoable
       opts = { method: @method, url: url, headers: headers }
 
       is_get_request? ? opts : opts.merge({ payload: @payload })
+    end
+  end
+
+  class ClientNew
+    attr_reader :token, :token_expires_at, :base_url, :username, :password
+
+    class NoResponseError < StandardError; end
+
+    def initialize(username: "vinod_lala@usa.net", password: "todoable")
+      @username = username
+
+      @password = password
+
+      # @options = {}
+    end
+
+    def authenticate
+      puts "in authenticate"
+      # @options[:basic_auth] = {
+      #   username: @username,
+      #   password: @password
+      # }
+
+      # response = self.class.post('/authenticate', @options)
+      # check_and_raise_errors(response)
+      # @token = response.parsed_response['token']
+      # tokens expire after 20 minutes
+
+      token_info = get_token
+      puts "token_info"
+      puts token_info
+
+      @token = token_info["token"]
+
+      puts "@token"
+      puts @token
+      @token_expires_at = token_info["token_expires_at"]
+      # use legit expiry in case it changes from 20 mins
+      @token_expiry = Time.now + (20 * 60)
+
+      self
+    end
+
+    def get_token
+      response = RestClient::Request.execute(
+        method: :post,
+        url: BASE_URL + "/authenticate",
+        user: @username,
+        password: @password
+      )
+      puts response
+
+      JSON.parse(response)
+    end
+
+    def rest_client_request(method:, path:, params: {})
+      puts "in rest_client_request"
+      puts headers
+      response = RestClient::Request.execute(
+        method: method,
+        url: BASE_URL + path,
+        payload: params.to_json,
+        headers: headers
+      )
+
+      JSON.parse(response)
+      # rescue RestClient::ExceptionWithResponse => err
+      #   ErrorParser.parse_error(err.response)
+    end
+
+    def get_lists
+      # check token
+      # response = Todoable::Client.new(:get, "/lists").execute
+      response = rest_client_request(method: :get,
+                                     path: "/lists")
+
+      puts response
+      # JSON.parse(response)
+      response
+    end
+
+    def post_list(name = "NEW")
+      post_params = {
+        list: {
+          name: name
+        }
+      }
+
+      post_params = {
+        "list" => {
+          "name" => name
+        }
+      }
+      puts "in post_list"
+      puts "post_params"
+      puts post_params
+      # binding.pry
+
+      response = rest_client_request(method: :post,
+                                     path: "/lists",
+                                     params: post_params
+      )
+
+      response
+    end
+
+    def get_list(list_id)
+      response = rest_client_request(method: :get,
+                                     path: "/lists/#{list_id}")
+
+      response
+    end
+
+    def headers
+      out = {
+        'Content-Type': "application/json",
+        'Accept': "application/json",
+        # Authorization: "Token token='#{this_be_token}'"
+        # Authorization: "Token token='#{this_be_token_hc}'"
+
+        # Authorization: "Token token=\"#{this_be_token_hc}\""
+        # Authorization: "Token token=\"939cd8aa-456a-4c11-81be-4b01d2f5377a\""
+        # Authorization: "Token token=\"#{this_be_token}\""
+        Authorization: "Token token=\"#{@token}\""
+      }
+
+      # This is a weird RestClient thing
+      # if !@query_string.nil?
+      #   out.merge(params: @query_string)
+      # else
+      #   out
+      # end
+
+      puts "out"
+      puts out
+      out
     end
   end
 end
