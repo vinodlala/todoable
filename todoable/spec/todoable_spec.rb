@@ -9,15 +9,31 @@ RSpec.describe Todoable do
 
   describe ".get_lists" do
     it "has a key called lists" do
-      response = described_class.get_lists
+      response = JSON.parse(described_class.get_lists)
 
       expect(response.key?("lists")).to eq true
     end
 
     it "has a value that is an array" do
-      response = described_class.get_lists
+      response = JSON.parse(described_class.get_lists)
 
       expect(response["lists"].is_a? Array).to eq true
+    end
+  end
+
+  describe "Todoable::ClientNew" do
+    describe "#get_lists" do
+      it "has a key called lists" do
+        response = Todoable::ClientNew.new.get_lists
+
+        expect(response.key?("lists")).to eq true
+      end
+
+      it "has a value that is an array" do
+        response = Todoable::ClientNew.new.get_lists
+
+        expect(response["lists"].is_a? Array).to eq true
+      end
     end
   end
 end

@@ -198,15 +198,15 @@ module Todoable
   end
 
   class ClientNew
-    attr_reader :token, :token_expires_at, :base_url, :username, :password
+    attr_reader :token, :token_expires_at, :username, :password
 
-    class NoResponseError < StandardError; end
 
     def initialize(username: "vinod_lala@usa.net", password: "todoable")
       @username = username
 
       @password = password
 
+      authenticate
       # @options = {}
     end
 
@@ -259,7 +259,30 @@ module Todoable
         headers: headers
       )
 
-      JSON.parse(response)
+      if response.is_a?(RestClient::Response)
+        return response
+      else
+        raise NoResponseError
+      end
+
+      puts "leaving rest_client_request"
+      response
+    rescue NoResponseError,
+      RestClient::InternalServerError,
+      RestClient::BadRequest,
+      RestClient::ExceptionWithResponse,
+      RestClient::ResourceNotFound,
+      RestClient::Unauthorized,
+      Errno::ECONNREFUSED => e
+
+      puts "e.response"
+      e.response
+
+    # rescue => e
+    #   puts "rest_client_request in rescue"
+    #   puts e
+    #   check_and_raise_errors(e)
+
       # rescue RestClient::ExceptionWithResponse => err
       #   ErrorParser.parse_error(err.response)
     end
@@ -267,44 +290,159 @@ module Todoable
     def get_lists
       # check token
       # response = Todoable::Client.new(:get, "/lists").execute
-      response = rest_client_request(method: :get,
-                                     path: "/lists")
+      response = rest_client_request(
+        method: :get,
+        path: "/lists"
+      )
 
-      puts response
-      # JSON.parse(response)
-      response
+      # check_and_raise_errors(response)
+
+      # return a hash
+      JSON.parse(response)
     end
 
-    def post_list(name = "NEW")
+    def post_list(name)
       post_params = {
         list: {
           name: name
         }
       }
 
-      post_params = {
-        "list" => {
-          "name" => name
-        }
-      }
-      puts "in post_list"
-      puts "post_params"
-      puts post_params
-      # binding.pry
-
-      response = rest_client_request(method: :post,
-                                     path: "/lists",
-                                     params: post_params
+      response = rest_client_request(
+        method: :post,
+        path: "/lists",
+        params: post_params
       )
 
-      response
+      # check_and_raise_errors(response)
+      # get a 422 UnprocessableEntity when it already exists
+
+      JSON.parse(response)
     end
 
     def get_list(list_id)
-      response = rest_client_request(method: :get,
-                                     path: "/lists/#{list_id}")
+      response = rest_client_request(
+        method: :get,
+        path: "/lists/#{list_id}"
+      )
+
+      # check_and_raise_errors(response)
+
+      # return a hash
+      JSON.parse(response)
+    end
+
+    def patch_list(list_id, name)
+      post_params = {
+        list: {
+          name: name
+        }
+      }
+
+      response = rest_client_request(
+        method: :patch,
+        path: "/lists/#{list_id}",
+        params: post_params
+      )
+
+      # check_and_raise_errors(response)
+
+      puts response
 
       response
+      # JSON.parse(response)
+    end
+
+    def delete_list(list_id)
+      response = rest_client_request(method: :delete,
+                                     path: "/lists/#{list_id}"
+      )
+
+      # check_and_raise_errors(response)
+      # 422 happens when it already exists
+
+      # JSON.parse(response)
+      response
+    end
+
+    def post_list_items(list_id, name)
+      post_params = {
+        item: {
+          name: name
+        }
+      }
+
+      response = rest_client_request(
+        method: :post,
+        path:  "/lists/#{list_id}/items",
+        params: post_params
+      )
+
+      # check_and_raise_errors(response)
+
+      # JSON.parse(response)
+      response
+    end
+
+    def finish_list_item(list_id, item_id)
+      response = rest_client_request(
+        method: :put,
+        path: "/lists/#{list_id}/items/#{item_id}/finish"
+      )
+
+      # check_and_raise_errors(response)
+
+      response
+      # JSON.parse(response)
+    end
+
+    def delete_list_item(list_id, item_id)
+      response = rest_client_request(
+        method: :delete,
+        path: "/lists/#{list_id}/items/#{item_id}"
+      )
+
+      # check_and_raise_errors(response)
+      # 422 happens when it already exists
+
+      # returns "" if it works
+      response
+
+      # JSON.parse(response)
+    end
+
+
+
+
+
+
+
+
+    def check_token
+      raise NoTokenError unless @token
+      authenticate if token_expired
+    end
+
+    def token_expired
+      Time.now > @token_expiry
+    end
+
+    def check_and_raise_errors(response)
+      puts "in check_and_raise_error"
+      puts "response error"
+      puts response
+      case response.code.to_i
+      when 200..300 then true
+      when 404 then raise NotFoundError
+      when 401 then raise UnauthorizedError
+      when 422
+        # errors = response.parsed_response['errors']
+        # raise UnprocessableError.new(errors: errors)
+        # raise Error.new(errors: errors)
+        raise UnprocessableError
+      else
+        raise StandardError, "Unknown error from Todoable: #{response}"
+      end
     end
 
     def headers
@@ -317,7 +455,9 @@ module Todoable
         # Authorization: "Token token=\"#{this_be_token_hc}\""
         # Authorization: "Token token=\"939cd8aa-456a-4c11-81be-4b01d2f5377a\""
         # Authorization: "Token token=\"#{this_be_token}\""
+
         Authorization: "Token token=\"#{@token}\""
+        # 'Authorization': "#{@token}"
       }
 
       # This is a weird RestClient thing
@@ -330,6 +470,21 @@ module Todoable
       puts "out"
       puts out
       out
+    end
+
+    class NoResponseError < StandardError
+    end
+
+    class NotFoundError < StandardError
+    end
+
+    class NoTokenError < StandardError
+    end
+
+    class UnauthorizedError < StandardError
+    end
+
+    class UnprocessableError < StandardError
     end
   end
 end

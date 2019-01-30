@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb8c8a5-0a51-4c67-a3ba-8fc5cbcfed23" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/todoable/Gemfile.lock" afterPath="$PROJECT_DIR$/todoable/Gemfile.lock" />
       <change beforePath="$PROJECT_DIR$/todoable/lib/todoable.rb" afterPath="$PROJECT_DIR$/todoable/lib/todoable.rb" />
       <change beforePath="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" afterPath="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" />
       <change beforePath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" afterPath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" />
-      <change beforePath="$PROJECT_DIR$/todoable/todoable.gemspec" afterPath="$PROJECT_DIR$/todoable/todoable.gemspec" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +18,28 @@
       <file leaf-file-name="todoable.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="282" column="7" lean-forward="true" selection-start-line="282" selection-start-column="7" selection-end-line="282" selection-end-column="7" />
+            <state relative-caret-position="380">
+              <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todoable_spec.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="standard_error.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/rubystubs23/standard_error.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -38,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todoable.gemspec" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todoable.gemspec" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todoable/todoable.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="43" lean-forward="true" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+            <state relative-caret-position="420">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,6 +79,8 @@
       <find>bind</find>
       <find>binding.pry</find>
       <find>binding.pr</find>
+      <find>check_and_raise_errors</find>
+      <find>check_and_raise_errors</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,10 +90,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/todoable/.gitignore" />
-        <option value="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" />
         <option value="$USER_HOME$/.rvm/gems/ruby-2.3.1/gems/todoable-0.1.0/lib/todoable.rb" />
-        <option value="$PROJECT_DIR$/todoable/lib/todoable.rb" />
         <option value="$PROJECT_DIR$/todoable/todoable.gemspec" />
+        <option value="$PROJECT_DIR$/todoable/lib/todoable.rb" />
+        <option value="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" />
       </list>
     </option>
   </component>
@@ -175,12 +194,12 @@
       <workItem from="1548605640153" duration="1112000" />
       <workItem from="1548610038003" duration="9858000" />
       <workItem from="1548679208311" duration="590000" />
-      <workItem from="1548854382183" duration="9491000" />
+      <workItem from="1548854382183" duration="14918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22019000" />
+    <option name="totallyTimeSpent" value="27446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -373,26 +392,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.3.1/gems/rest-client-1.8.0/lib/restclient/request.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -413,18 +416,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
+    <entry file="file://$PROJECT_DIR$/todoable/todoable.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="282" column="7" lean-forward="true" selection-start-line="282" selection-start-column="7" selection-end-line="282" selection-end-column="7" />
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/todoable.gemspec">
+    <entry file="file://$PROJECT_DIR$/todoable/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="43" lean-forward="true" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs23/standard_error.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
