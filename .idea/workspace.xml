@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb8c8a5-0a51-4c67-a3ba-8fc5cbcfed23" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/todoable/lib/todoable.rb" afterPath="$PROJECT_DIR$/todoable/lib/todoable.rb" />
-      <change beforePath="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" afterPath="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" />
-      <change beforePath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" afterPath="$PROJECT_DIR$/todoable/todoable-0.1.0.gem" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/todoable/.gitignore" afterPath="$PROJECT_DIR$/todoable/.gitignore" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,21 +14,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="todoable.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todoable/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todoable_spec.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todoable.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todoable_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,11 +98,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/todoable/.gitignore" />
         <option value="$USER_HOME$/.rvm/gems/ruby-2.3.1/gems/todoable-0.1.0/lib/todoable.rb" />
         <option value="$PROJECT_DIR$/todoable/todoable.gemspec" />
         <option value="$PROJECT_DIR$/todoable/lib/todoable.rb" />
         <option value="$PROJECT_DIR$/todoable/spec/todoable_spec.rb" />
+        <option value="$PROJECT_DIR$/todoable/.gitignore" />
       </list>
     </option>
   </component>
@@ -194,12 +203,12 @@
       <workItem from="1548605640153" duration="1112000" />
       <workItem from="1548610038003" duration="9858000" />
       <workItem from="1548679208311" duration="590000" />
-      <workItem from="1548854382183" duration="14918000" />
+      <workItem from="1548854382183" duration="15150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27446000" />
+    <option name="totallyTimeSpent" value="27678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -384,14 +393,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todoable.gemspec" />
     <entry file="file://$PROJECT_DIR$/lib/todoable.rb" />
-    <entry file="file://$PROJECT_DIR$/todoable/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.3.1/gems/rest-client-1.8.0/lib/restclient/request.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -440,18 +441,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
+    <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todoable/spec/todoable_spec.rb">
+    <entry file="file://$PROJECT_DIR$/todoable/lib/todoable.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todoable/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
